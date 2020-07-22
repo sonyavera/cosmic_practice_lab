@@ -1,0 +1,20 @@
+<h1>About <%= @scientist.name %></h1>
+
+He's in the <%= @scientist.field_of_study %> department and likes long walks on the beach. 
+
+
+<% if @scientist.planets.count > 0 %>
+    <p> 
+        He's been to the following planets:
+        
+        <% @scientist.planets.each do |planet| %>
+        
+            <li><%= planet.name %> </li>
+        <% end%><br>
+
+        ...which is really impressive.
+    </p>
+<% end%>
+
+<%= button_to "delete", {:controller => :scientists,
+      :action => 'destroy', :id => @scientist.id }, :method => :delete %>
