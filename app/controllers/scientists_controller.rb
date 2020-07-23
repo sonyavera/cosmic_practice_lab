@@ -1,5 +1,5 @@
 class ScientistsController < ApplicationController
-    before_action :set_scientist, only: [:show, :edit, :create, :update, :destroy]
+    before_action :set_scientist, only: [:show, :edit, :update, :destroy]
 
     def index
         @scientists = Scientist.all
